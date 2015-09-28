@@ -32,7 +32,7 @@ int ordenar (int vetorzinho[], int t){//função que ordena vetores conhecida como
 	int i, j, temp;
 	int x = t;
 	for(i=0; i<x; i++){
-		for(j=1; j<=x; j++){
+		for(j=1; j<x; j++){
 			if(vetorzinho[j] > vetorzinho[j+1]){
 				temp = vetorzinho[j+1];
 				vetorzinho[j+1] = vetorzinho [j];

@@ -28,26 +28,19 @@ main(){
 			}
 		}
 		Vaux[i]=d;
-		if( i == 1 || i == t){
-			Vaux[i]++;
-		}
 	}
 	i = seleciona(Vaux, t);// chama a função que seleciona o maior elemento e faz i ser igual a ele
 	printf("A maior frequencia obtida foi %d e os numeros que fornecem essa \nfrequencia sao : ", i );
 	//imprime a maior frequência
-	imprimir(Vaux, V, t, i);
-	printf("teste: ");
-	for(i=1;i<=t;i++){
-		printf("%d ", Vaux[i]);
-	}
+	imprimir(Vaux, V, t, i);//chama a função que imprime todos os elementos que ocorrem na maior frequência
 	scanf("%d");
 }
 
 int ordenar (int vetorzinho[], int t){//função do tipo bubble sort que ordena um vetor 
 	int i, j, temp;
 	int x = t;
-	for(i=0; i<x; i++){
-		for(j=1; j<=x; j++){
+	for(i=1; i<=x; i++){
+		for(j=1; j<x; j++){
 			if(vetorzinho[j] > vetorzinho[j+1]){
 				temp = vetorzinho[j+1];
 				vetorzinho[j+1] = vetorzinho [j];
@@ -73,10 +66,11 @@ int seleciona (int Vaux[], int taux){//função que seleciona o maior elemento de 
 int imprimir (int Vaux[],int V[], int t, int maior){//função que imprime todos os números que ocorrem na maior frequência
 	int i;
 	for(i=1;i<=t;i++){
-		if(Vaux[i] == maior && V[i]!=V[i-1] && V[i]!=0){//as condições são devidos a erros que dariam no primeiro e último elemento
+		if(Vaux[i] == maior && V[i]!=V[i-1]){
 			printf("%d, ", V[i]);
 		}
 	}
+	return 0;
 }
 
 
